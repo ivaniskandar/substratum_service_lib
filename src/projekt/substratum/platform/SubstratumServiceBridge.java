@@ -16,7 +16,7 @@
 
 package projekt.substratum.platform;
 
-import android.os.ISubstratumService;
+import android.content.substratum.ISubstratumService;
 import android.os.ServiceManager;
 
 public class SubstratumServiceBridge {
