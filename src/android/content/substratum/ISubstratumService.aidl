@@ -31,13 +31,13 @@ interface ISubstratumService {
      * @param packages  Filled in with a list of path names for packages to be installed from.
      * @param restartUi Flag to automatically restart the SystemUI.
      */
-    void uninstallOverlay(in List<String> paths, boolean restartUi);
+    void uninstallOverlay(in List<String> packages, boolean restartUi);
 
     /**
      * Switch the state of specified overlay packages
      *
-     * @param packages Filled in with a list of package names to be switched.
-     * @param enable Whether to enable the specified overlays.
+     * @param packages  Filled in with a list of package names to be switched.
+     * @param enable    Whether to enable the specified overlays.
      * @param restartUi Flag to automatically restart the SystemUI.
      */
     void switchOverlay(in List<String> packages, boolean enable, boolean restartUi);
@@ -48,7 +48,7 @@ interface ISubstratumService {
      * @param packages  Filled in with a list of package names to be reordered.
      * @param restartUi Flag to automatically restart the SystemUI.
      */
-    void changePriority(in List<String> packages, boolean restartUi);
+    void setPriority(in List<String> packages, boolean restartUi);
 
     /**
      * Restart SystemUI
@@ -85,6 +85,27 @@ interface ISubstratumService {
      * @param withParent    Flag to automatically delete the folder encompassing the folder.
      */
     void deleteDirectory(String directory, boolean withParent);
+
+    /**
+     * Apply a specified bootanimation
+     *
+     * @param name  Path to extract the bootanimation archive from.
+     */
+    void applyBootanimation(String name);
+
+    /**
+     * Apply a specified font pack
+     *
+     * @param name  Path to extract the font archive from.
+     */
+    void applyFonts(String pid, String fileName);
+
+    /**
+     * Apply a specified sound pack
+     *
+     * @param name  Path to extract the sounds archive from.
+     */
+    void applySounds(String pid, String fileName);
 
     /**
      * Profile Applicator
